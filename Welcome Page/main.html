@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mazen Messai - ePortfolio</title>
+    <!-- Link to FontAwesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+        <nav>
+            <ul>
+                <li><a href="#welcome">Welcome</a></li>
+                <li><a href="#career">Career</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#art">Art Gallery</a></li>
+            </ul>
+            <div class="social-icons">
+                <!-- LinkedIn and GitHub icons -->
+                <a href="https://www.linkedin.com" target="_blank">
+                    <i class="fab fa-linkedin fa-2x"></i>
+                </a>
+                <a href="https://github.com" target="_blank">
+                    <i class="fab fa-github fa-2x"></i>
+                </a>
+            </div>
+        </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main>
+        <header>
+            <h1>Mazen Messai - Engineering Student at ENSEEIHT</h1>
+            <p>Welcome to my ePortfolio! Discover my projects, my research interests, and more about my career path.</p>
+        </header>
+
+        <section id="welcome">
+            <h2>Welcome !</h2>
+            <p>I am Mazen, an engineering student at ENSEEIHT, and a future researcher!</p>
+            <p>On this website, you will find information about me such as my career, my work, and also my hobbies.</p>
+            <p>I will try to do blog-posts as often as possible, where I will talk about stuff that I discovered and enjoyed (mostly fun math!) and also the projects I am currently working on.</p>
+        </section>
+
+        <section id="career">
+            <h2>Engineering Career</h2>
+            <p>Details about my academic and professional journey...</p>
+        </section>
+
+        <section id="blog">
+            <h2>Blog</h2>
+            <p>Here I will share my latest thoughts on various topics...</p>
+        </section>
+
+        <section id="projects">
+            <h2>My Projects</h2>
+            <p>Some of the key projects I have worked on...</p>
+        </section>
+
+        <section id="art">
+            <h2>Art Gallery</h2>
+            <div class="gallery">
+                <!-- Random images as placeholders -->
+                <img src="https://via.placeholder.com/300x200.png?text=Art+1" alt="Art work 1">
+                <img src="https://via.placeholder.com/300x200.png?text=Art+2" alt="Art work 2">
+                <img src="https://via.placeholder.com/300x200.png?text=Art+3" alt="Art work 3">
+                <img src="https://via.placeholder.com/300x200.png?text=Art+4" alt="Art work 4">
+            </div>
+        </section>
+
+        <footer>
+            <p>&copy; 2024 Mazen Messai. All Rights Reserved.</p>
+        </footer>
+    </main>
+
+    <!-- JavaScript for Hamburger Menu -->
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const sidebar = document.getElementById('sidebar');
+
+        hamburger.addEventListener('click', () => {
+            sidebar.classList.toggle('open');
+        });
+
+        // Optional: close sidebar if user clicks outside of it
+        document.addEventListener('click', (e) => {
+            if (!sidebar.contains(e.target) && !hamburger.contains(e.target)) {
+                sidebar.classList.remove('open');
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,128 @@
+/* General Styling */
+body {
+    font-family: 'Merriweather', serif;
+    margin: 0;
+    padding: 0;
+    background-color: #F9F0E3; /* Desert theme: soft sand background */
+    color: #5C4A42; /* Dark brown for text */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Ensure the body takes the full viewport height */
+}
+
+h1, h2 {
+    font-family: 'Source Code Pro', monospace;
+    color: #D4A373; /* Desert theme: warm golden for headings */
+}
+
+p {
+    line-height: 1.6;
+}
+
+a {
+    color: #D48D2A; /* Desert gold for links */
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Sidebar Navigation */
+.sidebar {
+    background-color: #E8D3BF; /* Light desert sand color */
+    width: 250px;
+    padding: 20px;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    box-shadow: 3px 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar nav ul li {
+    margin: 20px 0;
+}
+
+.sidebar nav ul li a {
+    font-size: 1.2em;
+    color: #5C4A42;
+    font-weight: bold;
+}
+
+.sidebar nav ul li a:hover {
+    color: #D48D2A; /* Highlight on hover */
+}
+
+/* Aligning social icons to the left */
+.social-icons {
+    margin-top: 30px;
+    display: flex;
+    justify-content: flex-start; /* Align to the left */
+    gap: 10px; /* Adds some space between icons */
+}
+
+.social-icons a {
+    color: #5C4A42;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: #D48D2A;
+}
+
+.social-icons i {
+    font-size: 1.8em;
+    transition: transform 0.3s ease;
+}
+
+.social-icons i:hover {
+    transform: scale(1.1);
+}
+
+/* Blog content container */
+.blog-container {
+    flex-grow: 1;
+    padding: 40px;
+}
+
+.blog-post {
+    margin-bottom: 50px;
+}
+
+.blog-post img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.blog-post h2 {
+    color: #D4A373;
+    font-family: 'Source Code Pro', monospace;
+    margin-top: 20px;
+}
+
+.read-more {
+    color: #D48D2A;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.read-more:hover {
+    text-decoration: underline;
+}
+
+/* Footer styling */
+footer {
+    background-color: #C2A98C;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    width: 100%;
+}
