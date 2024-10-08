@@ -132,7 +132,7 @@ footer {
     color: light-dark(#F3EFEA, #F5F5F5);
     position: relative; 
     width: 100%; 
-    border-top: 1px solid light-dark(#D4A373,#6badce);
+    border-top: 1px solid (#D4A373,#6badce);
     height: 100px; 
     display: flex;
     align-items: center; 
