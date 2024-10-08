@@ -1,18 +1,21 @@
-/* General Styling */
+:root {
+    color-scheme: light dark;
+}
+
 body {
     font-family: 'Merriweather', serif;
     margin: 0;
     padding: 0;
-    background-color: #F9F0E3; /* Desert theme: soft sand background */
-    color: #5C4A42; /* Dark brown for text */
+    background-color: light-dark(#F9F0E3, #1d2125);
+    color: light-dark(#5C4A42, #f5f5f5); 
     display: flex;
     flex-direction: column;
-    min-height: 100vh; /* Ensure the body takes the full viewport height */
+    min-height: 100vh;
 }
 
 h1, h2 {
     font-family: 'Source Code Pro', monospace;
-    color: #D4A373; /* Desert theme: warm golden for headings */
+    color: light-dark(#D4A373,#6badce); 
 }
 
 p {
@@ -20,7 +23,7 @@ p {
 }
 
 a {
-    color: #D48D2A; /* Desert gold for links */
+    color: light-dark(#D4A373,#6badce);
     text-decoration: none;
 }
 
@@ -28,9 +31,8 @@ a:hover {
     text-decoration: underline;
 }
 
-/* Sidebar Navigation */
 .sidebar {
-    background-color: #E8D3BF; /* Light desert sand color */
+    background-color: light-dark(#E8D3BF,#2c333a); 
     width: 250px;
     padding: 20px;
     height: 100vh;
@@ -51,30 +53,30 @@ a:hover {
 
 .sidebar nav ul li a {
     font-size: 1.2em;
-    color: #5C4A42;
+    color: light-dark(#5C4A42, #f5f5f5);
     font-weight: bold;
 }
 
 .sidebar nav ul li a:hover {
-    color: #D48D2A; /* Highlight on hover */
+    color: light-dark(#D4A373,#6badce);
 }
 
-/* Aligning social icons to the left */
+
 .social-icons {
     margin-top: 30px;
     display: flex;
-    justify-content: flex-start; /* Align to the left */
-    gap: 10px; /* Adds some space between icons */
+    justify-content: flex-start; 
+    gap: 10px; 
 }
 
 .social-icons a {
-    color: #5C4A42;
+    color: light-dark(#5C4A42, #f5f5f5);
     text-decoration: none;
     transition: color 0.3s ease;
 }
 
 .social-icons a:hover {
-    color: #D48D2A;
+    color: light-dark(#D4A373,#6badce);
 }
 
 .social-icons i {
@@ -86,16 +88,15 @@ a:hover {
     transform: scale(1.1);
 }
 
-/* Main Content Area */
 main {
-    flex-grow: 1; /* Main content will take up the remaining space */
+    flex-grow: 1;
     margin-left: 270px;
     padding: 20px 50px;
 }
 
 header {
     margin-bottom: 30px;
-    border-bottom: 2px solid #D4A373;
+    border-bottom: 2px solid light-dark(#D4A373,#6badce);
     padding-bottom: 20px;
 }
 
@@ -108,7 +109,6 @@ header p {
     font-size: 1.2em;
 }
 
-/* Section styling */
 section {
     margin-bottom: 50px;
 }
@@ -126,17 +126,16 @@ section {
     box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Updated Footer Styling */
 footer {
     text-align: center;
-    background-color: #C2A98C; /* Darker beige tint */
-    color: #F3EFEA;
-    position: relative; /* This will let the footer stay at the bottom of content */
-    width: 100%; /* Take up the entire width */
-    border-top: 1px solid #D4A373;
-    height: 100px; /* Fixed height for consistency */
+    background-color: light-dark(#C2A98C, #2c333a); 
+    color: light-dark(#F3EFEA, #F5F5F5);
+    position: relative; 
+    width: 100%; 
+    border-top: 1px solid light-dark(#D4A373,#6badce);
+    height: 100px; 
     display: flex;
-    align-items: center; /* Vertically center the content */
-    justify-content: center; /* Horizontally center the content */
-    padding: 0; /* Remove the padding around the footer */
+    align-items: center; 
+    justify-content: center; 
+    padding: 0; 
 }
