@@ -1,0 +1,7 @@
+img {
+    border-radius: 20px;
+    width: 90% ;
+    height: 45% ;
+    object-fit : cover ;
+}
+
