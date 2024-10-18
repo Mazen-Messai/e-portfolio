@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mazen Messai - Comparative Study Between Minimax and MCTS for 2048</title>
+    <!-- Link to FontAwesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="../../styles/default_index.css">
+    <link rel="stylesheet" href="../../styles/articles.css">
+    <!-- MathJax for rendering LaTeX -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+        <nav>
+            <ul>
+                <li><a href="../../default_index.html">Welcome</a></li>
+                <li><a href="#career">Career</a></li>
+                <li><a href="../blog.html">Blog</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#art">Art Gallery</a></li>
+            </ul>
+            <div class="social-icons">
+                <a href="https://www.linkedin.com/in/mazen-messai-4587a41bb/" target="_blank">
+                    <i class="fab fa-linkedin fa-2x"></i>
+                </a>
+                <a href="https://github.com/Mazen-Messai" target= "_blank">
+                    <i class="fab fa-github fa-2x"></i>
+                </a>
+            </div>
+        </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main>
+        <header>
+            <h1>Comparative Study Between Minimax Algorithm and MCTS for the Game 2048</h1>
+            <p>Most off us know 2048, and most of us play this game "instinctivly", but how about algorithm? My close friend <a href="https://www.linkedin.com/in/tiromar/">Omar</a> and I have explored the subjet during our second year of Classe Prépatatoire, and here is a little article explaining what we did and our results !  </p>
+        </header>
+
+        <section class="study-content">
+            <h2>1. Introduction</h2>
+            <p>
+                The 2048 game is a digital puzzle game that became extremely popular shortly after its launch in 2014. The game is played on a 4x4 grid where tiles with equal values combine to form a tile with a higher value. The aim is to merge the tiles until you have a tile with the value 2048. Although the rules of the game are simple, the number of possible movement options and the random introduction of new tiles each turn give the game a considerable strategic depth.
+            </p>
+            <p>
+                The game's success is linked to its ability to balance elements of chance and strategy, making each game unique. This complex nature of the game, which combines strategic decisions with random elements, makes it an excellent field of study for testing and comparing artificial intelligence algorithms.
+            </p>
+            <p>
+                Two algorithms, Minimax and Monte Carlo Tree Search (MCTS), are often used to analyze and determine the best moves in strategic games. Minimax explores all game possibilities, anticipating the worst case to choose the best move, while MCTS uses random simulations to explore the decision tree more flexibly. In this study, I dealt with the MCTS part, while Mazen Messai took care of the Minimax part. The aim of this work is to compare the performance of these two algorithms and evaluate their respective strengths and weaknesses in the context of the 2048 game.
+            </p>
+
+            <h2>2. The role of chance in the 2048 game</h2>
+            <p>
+                The 2048 game involves a high degree of randomness, since after each move, a new tile (worth 2 or 4) appears randomly on the grid. To assess the impact of this random aspect, we ran a simulation of 1000 games, using different approaches based on random moves or simple rules.
+            </p>
+            <p>
+                We tested several strategies. The first approach was to make totally random moves, where each move was chosen without any particular logic. In this configuration, the results were often very poor, with little progression towards high-value tiles.
+            </p>
+            <p>
+                Next, we implemented a direction prioritization strategy, where certain movements such as going up or to the left were favored. The aim of this approach was to better control the positioning of tiles on the grid, but the results were limited.
+            </p>
+            <p>
+                The results show that randomized or simple instruction-based approaches do not reliably achieve the 2048 tile. The majority of games end with relatively low scores, and the highest-value tiles obtained often don't exceed 128 or 256.
+            </p>
+            <p>
+                The graph below shows the distribution of scores obtained after 1000 simulated games. As can be seen, the majority of games reach scores between 500 and 1500, and very few manage to exceed the 2000-point mark. 
+            </p>
+                <img src="..\..\ressources\ressources2048\score1.png">
+                <figcaption>Fig.1 - Score distribution for 1000 random games </figcaption>
+            <p>
+                The following graph illustrates the distribution of tiles obtained in these simulations. It shows that the majority of games result in tiles with modest values, such as 64 or 128, and that very few games manage to generate tiles with higher values, such as 512 or 256.
+            </p>
+                <img src="..\..\ressources\ressources2048\scoredonut1.png">
+                <figcaption>Fig.2 - Distribution of tiles obtained during simulations </figcaption>
+            <p>
+                These simulations clearly show that strategies based solely on chance cannot reliably beat the game. Although some simple rules can slightly improve results, they are still insufficient to maximize the chances of success.  
+            </p>
+
+            <h2>3. Minimax algorithm</h2>
+            <p>
+                The Minimax algorithm is one of the most commonly used methods for solving two-player game problems, simulating “maximization” and “minimization” scenarios in order to choose the optimal actions. Here, in order to get rid of the randomness, we will considerate the game as an opponent, who will place the next tiles in the scenario that will minimize our score.
+            </p>
+            <p>
+                Minimax helps to explore all the options available at each move, and to choose the option that maximizes the chances of long-term success, taking into account not only the immediate move, but also its future consequences. Coupled with alpha-beta pruning, the Minimax algorithm becomes more efficient by reducing the number of branches to be explored in the decision tree.
+            </p>
+                <img src="..\..\ressources\ressources2048\arbre1.png">
+                <figcaption>Fig.3 - Alpha-Beta tree </figcaption>
+                <img src="..\..\ressources\ressources2048\arbre2.png">
+                <figcaption>Fig.4 - Alpha-Beta tree </figcaption>
+            <p>
+                Figure 3 shows the basic structure of a Minimax tree. Level 0 represents the player seeking to maximize his score by choosing the best possible move from the directions (left, up, down, right). Level 1 simulates the random appearance of new tiles after the player's move, representing the “minimization” of the player's gains, as these new tiles may prevent future mergers. The process alternates between these two levels until it reaches a certain depth, at which point an evaluation function determines the quality of each board state.  
+            </p>
+            <p>
+                In Figure 4, values are assigned to each node, illustrating the player's decision-making process. At each “max” level, the player selects the move that maximizes his potential score, while at each “min” level, he anticipates the appearance of new tiles in the least favorable locations.
+            </p>
+            <h3>3.1. Heuristics used by Minimax</h3>
+            <p>
+                To efficiently evaluate each board state in the 2048 game, the Minimax algorithm uses several heuristics. These heuristics assign a value to the different scenarios, taking into account the layout of the tiles and their potential to merge.
+            </p>
+            <p>
+                The first important heuristic is monotony. It evaluates the arrangement of tiles in terms of their ascending or descending order. A board is considered monotonous if the values of the tiles increase or decrease in an orderly fashion, either horizontally or vertically. This arrangement makes the board easier to manage, as higher-value tiles are grouped together and therefore more likely to merge in future moves. To measure this monotony, we use the following formula :
+            </p>
+            \[
+            \large \text{monotony} = \frac{1}{2} \sum_{i=0}^{3} \sum_{j=0}^{3} (\delta_{i,j}^{V} + \delta_{i,j}^{H})
+            \]
+            <p>
+                In this formula, the terms \(\delta_{i,j}^{V}\) and \(\delta_{i,j}^{H}\) respectively measure the difference in values between vertically and horizontally adjacent tiles. When these differences are small, they indicate a monotonous progression across the board.
+            </p>
+            <p>
+                The second key heuristic is regularity. This measures the differences in values between adjacent tiles and seeks to minimize these differences. A regular board features tiles whose values are close to each other, thus facilitating future mergers. This regularity is particularly important, as too great a gap between the values of adjacent tiles makes it more difficult to create new mergers in future moves. Regularity is calculated using the following formula :
+            </p>
+            \[
+            \large\text{régularité} = - \sum_{i=0}^{3} \sum_{j=0}^{3} (d_{i,j}^{V} + d_{i,j}^{H})
+            \]
+            <p>
+                In this formula, \(d_{i,j}^{V}\) and \(d_{i,j}^{H}\) measure the logarithmic distance between vertically and horizontally adjacent tiles. The smaller the deviation, the more regular the board is considered to be, making future mergers easier.
+            </p>
+            <h3>Minimax Results</h3>
+            <p>
+                After applying the heuristics to the Minimax algorithm, we'll discuss the results obtained for different depth configurations. The graph below (Figure 5) illustrates the results of the Minimax algorithm for three different calculation depths: 4, 5 and 6. 
+            </p>
+                <img src="..\..\ressources\ressources2048\arbre2.png">
+                <figcaption>Fig.5 - Results of the Minimax algorithm at depths 4, 5 and 6, 100 games.</figcaption>
+            <p>
+                At a depth of 6, Minimax manages to significantly increase the proportion of games reaching tile 2048, but even at this depth, the win rate doesn't exceed 50\%. This shows that even when optimizing moves and anticipating worst-case scenarios, the algorithm is still limited by the random element introduced by the appearance of new tiles after each move. What's more, the computational time cost becomes very high at this depth, making execution of the algorithm very slow, especially for long-term simulations.
+            </p>
+            <p>
+                The cost in computing time becomes very high at this depth. For example, at a depth of 5, each part takes an average of 20 minutes to run. Consequently, to complete the 100 simulations required for the analysis, it took almost 30 hours to run. At a depth of 6, this time becomes even more prohibitive, making it difficult to run the algorithm.
+            </p>
+        </section>
+
+        <footer>
+            <p>&copy; 2024 Mazen Messai. All Rights Reserved.</p>
+        </footer>
+    </main>
+</body>
+</html>
