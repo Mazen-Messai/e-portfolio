@@ -41,6 +41,13 @@
         </header>
 
         <section class="study-content">
+            <h2>Abstract</h2>
+            <p>
+                The 2048 game, a widely recognized digital puzzle, presents a unique blend of chance and strategy, making it an ideal candidate for artificial intelligence (AI) analysis. This study investigates the performance of two prominent AI algorithms—Minimax and Monte Carlo Tree Search (MCTS)—in the context of the 2048 game. The Minimax algorithm employs a comprehensive approach by exploring all possible moves while anticipating the worst-case scenarios, whereas MCTS utilizes random simulations to navigate the decision tree, offering a flexible strategy. 
+            </p>
+            <p>    
+                Through simulations of 1000 games, the impact of randomness on game outcomes was assessed, revealing that purely random strategies often result in low scores. Subsequently, Minimax demonstrated significant potential in achieving the game's objective, yet its high computational costs limited its efficiency. In contrast, MCTS outperformed Minimax by achieving a higher success rate and requiring less computational time. The study concludes with potential enhancements for MCTS, including the integration of reinforcement learning and strategic human input in the early stages of the game, paving the way for future research and optimization in AI applications for more complex problems.
+            </p>
             <h2>1. Introduction</h2>
             <p>
                 The 2048 game is a digital puzzle game that became extremely popular shortly after its launch in 2014. The game is played on a 4x4 grid where tiles with equal values combine to form a tile with a higher value. The aim is to merge the tiles until you have a tile with the value 2048. Although the rules of the game are simple, the number of possible movement options and the random introduction of new tiles each turn give the game a considerable strategic depth.
@@ -118,11 +125,11 @@
             <p>
                 In this formula, \(d_{i,j}^{V}\) and \(d_{i,j}^{H}\) measure the logarithmic distance between vertically and horizontally adjacent tiles. The smaller the deviation, the more regular the board is considered to be, making future mergers easier.
             </p>
-            <h3>Minimax Results</h3>
+            <h3>3.2. Minimax Results</h3>
             <p>
                 After applying the heuristics to the Minimax algorithm, we'll discuss the results obtained for different depth configurations. The graph below (Figure 5) illustrates the results of the Minimax algorithm for three different calculation depths: 4, 5 and 6. 
             </p>
-                <img src="..\..\ressources\ressources2048\arbre2.png">
+                <img src="..\..\ressources\ressources2048\3graphiquesMinimax.png">
                 <figcaption>Fig.5 - Results of the Minimax algorithm at depths 4, 5 and 6, 100 games.</figcaption>
             <p>
                 At a depth of 6, Minimax manages to significantly increase the proportion of games reaching tile 2048, but even at this depth, the win rate doesn't exceed 50\%. This shows that even when optimizing moves and anticipating worst-case scenarios, the algorithm is still limited by the random element introduced by the appearance of new tiles after each move. What's more, the computational time cost becomes very high at this depth, making execution of the algorithm very slow, especially for long-term simulations.
@@ -130,6 +137,80 @@
             <p>
                 The cost in computing time becomes very high at this depth. For example, at a depth of 5, each part takes an average of 20 minutes to run. Consequently, to complete the 100 simulations required for the analysis, it took almost 30 hours to run. At a depth of 6, this time becomes even more prohibitive, making it difficult to run the algorithm.
             </p>
+
+            <h2>4. Monte Carlo Tree Search Algorithm</h2>
+            <h3>4.1. How MCTS works</h3>
+            <p>
+                Monte Carlo Tree Search (MCTS) is a method used to make decisions in games where the next possible states are not known precisely, as in the game 2048. Unlike other algorithms such as Minimax, MCTS is particularly useful when faced with uncertainty about the evolution of the game.
+            </p>
+            <p>
+                In 2048, the MCTS algorithm builds a game tree by simulating several games from each possible move. At each turn, several simulations are run to see how the game might evolve after a given move. Each simulation helps to estimate the potential success of a move. The algorithm then selects the move that gave the best results in the simulations and saves this decision.
+            </p>
+            <h3>4.1. Principle of the MCTS algorithm</h3>
+            <p>
+                The MCTS algorithm follows an iterative process to select the best moves in a game like 2048, where uncertainty about the future state of the game is omnipresent. The operation of MCTS can be summarized in four main phases: selection, expansion, simulation and back-propagation, but these stages form a continuous flow rather than a rigid sequence.
+            </p>
+            <p>
+                First, the algorithm begins with selection. Based on the current state of the game, it traverses the existing decision tree, choosing the nodes (or moves) that seem most promising. This phase is guided by the Upper Confidence Bound (UCB) formula, which manages the dilemma between exploiting moves already explored or exploring new ones. The UCB formula is given by :
+            </p>
+            \[
+            \large a^* = \arg \max_{a \in A(s)} \left[ Q(s, a) + C \sqrt{\frac{\ln N(s)}{N(s, a)}} \right]
+            \]
+            <p>
+                where A(s) represents the possible actions in the state, Q(s, a) is the average score obtained by playing a, N(s) is the number of times the state has been visited, \( N(s, a) \) the number of times the action \( a \) has been chosen, and \( C \) is a constant that regulates the balance between exploration and exploitation.
+            </p>
+            <p>
+                Once a move has been selected, the algorithm simulates a game from that move, playing a series of random moves to a hypothetical endgame. This allows the potential success of each decision to be assessed. The result of this simulation is then used to update the estimate of previous moves in the tree. At each new round, MCTS chooses the move that has achieved the best results over the simulations. This approach enables the algorithm to make optimized decisions even in the presence of uncertainty, such as the random appearance of new tiles in the 2048 game.
+            </p>
+            <h3>4.2. MCTS Results</h3>
+            <p>
+                The MCTS algorithm proved highly effective in solving 2048 games with impressive results, even with relatively small depth due to computational time constraints. As shown in Figure 7, of the 100 simulated games, 66 reached tile 2048, and 25 even reached tile 4096. Only 8 of the games were lost, demonstrating the robustness of the algorithm in achieving optimal results.
+            </p>
+                <img src="..\..\ressources\ressources2048\montecarloresultat.png">
+                <figcaption>Fig.6 - Results of MCTS algorithm, 100 games.</figcaption>
+            <p>
+                However, while these performances are promising, MCTS suffers from a time complexity that can become prohibitive with higher depth. The time complexity of MCTS is given by :
+            </p>
+            \[
+            \large O(n \cdot m \cdot d)
+            \]
+            <p>
+                where \(n\) is the number of simulations, \(m\) is the number of possible legal moves at each step, and (\d\) is the depth of the simulations. This means that as the depth and number of simulations increase, so does the computation time. In the conclusion, we'll look at different performance optimization methods.
+            </p>
+            <h2>Conclusion and possible improvements</h2>
+            <p>
+                In this study, we explored the performance of two algorithms for solving the 2048 game: Minimax and Monte Carlo Tree Search. Although Minimax performs well in certain contexts, it has shown significant limitations in terms of time complexity and ability to achieve consistent results. Conversely, the MCTS algorithm proved to be more effective in solving the game.
+            </p>
+            <p>
+                Improving the performance of MCTS also involves managing its temporal complexity. One possible approach would be to start the game with a human strategy, simulating for example the first 50 moves without using MCTS, where you could still get a good position in the game without losing the game (Figure 7). This method will significantly reduce the number of unoccupied squares on the board, simplifying the problem for MCTS. 
+            </p>
+                <img src="..\..\ressources\ressources2048\gamesaftermoves.png">
+                <figcaption>Fig.7 - Lost games by number of moves.</figcaption>
+            <p>
+                The integration of methods such as Reinforcement Learning, or optimization of the early stages of the game, could further enhance the performance of this algorithm. This future research will not only help us to better understand the limits of MCTS, but also to apply it to more complex problems beyond the 2048 game.
+            </p>
+
+            <h2>Bibliography</h2>
+            <ol>
+                <li>
+                    T. Neller and C. Presser, 
+                    <em>AI for 2048: Heuristic Search and Reinforcement Learning</em>, 
+                    Gettysburg College, 2014. 
+                    <a href="http://cs.gettysburg.edu/~tneller/papers/ccsce14-2048.pdf" target="_blank">http://cs.gettysburg.edu/~tneller/papers/ccsce14-2048.pdf</a>
+                </li>
+                <li>
+                    M. Yato and T. Seta, 
+                    <em>Complexity and Completeness of Finding Another Solution and Its Application to Puzzles</em>, 
+                    International Journal of Advanced Applied Mathematics and Computer Science, 2017. 
+                    <a href="https://www.ripublication.com/aama17/aamav12n1_01.pdf" target="_blank">https://www.ripublication.com/aama17/aamav12n1_01.pdf</a>
+                </li>
+                <li>
+                    C. Scarvalone, 
+                    <em>An Investigation of 2048 Using Reinforcement Learning</em>, 
+                    University of Chicago, 2008. 
+                    <a href="https://www.math.uchicago.edu/~may/VIGRE/VIGRE2008/REUPapers/Scarvalone.pdf" target="_blank">https://www.math.uchicago.edu/~may/VIGRE/VIGRE2008/REUPapers/Scarvalone.pdf</a>
+                </li>
+            </ol>
         </section>
 
         <footer>
