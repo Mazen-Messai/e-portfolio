@@ -68,14 +68,17 @@ a:hover {
     color: light-dark(#D4A373, #6badce);
 }
 
-@media screen and (min-width: 600px) {
+@media screen and (min-width: 650px) {
     .mobile-screen {
         display: none;
+    }
+    .sidebar {
+        display: block;
     }
 }
 
 /* Partie pour les petits écrans */
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 650px) {
     .sidebar {
         display: none;
     }
@@ -141,7 +144,7 @@ main {
     min-height: 100vh;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 650px) {
     main {
         margin-left: 20px;
     }
