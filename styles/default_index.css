@@ -13,6 +13,17 @@ body {
     min-height: 100vh;
 }
 
+header {
+    margin-left: 12.5%;
+    width: 75%;
+}
+
+section{
+    margin-left: 12.5%;
+    width: 75%;
+    margin-bottom: 0%;
+}
+
 h1, h2, h3 {
     font-family: 'Source Code Pro', monospace;
     color: light-dark(#D4A373, #6badce); 
@@ -146,4 +157,98 @@ footer {
     align-items: center;
     justify-content: center;
     padding: 0;
+}
+
+.photo-card {
+    display: flex;
+    align-items: center;
+    background-color: light-dark(#EFEFEF, #2c333a);
+    border-radius: 1px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    margin-top: 20px;
+    overflow: hidden;
+}
+
+.profile-photo {
+    width: 150px; /* Adjust width as necessary */
+    height: auto; /* Maintains aspect ratio */
+    border-radius: 10px; /* Makes photo circular */
+    margin-right: 20px; /* Space between image and text */
+}
+
+.card-content {
+    padding: 10px;
+    color: light-dark(#5C4A42, #f5f5f5);
+}
+
+.card-content h3 {
+    margin: 0;
+    font-size: 1.5em; /* Adjust font size as necessary */
+}
+
+.card-content p {
+    font-size: 1em; /* Adjust font size as necessary */
+}
+
+/* Main Welcome Section */
+.welcome-section {
+    display: flex; /* Flexbox layout for horizontal alignment */
+    align-items: flex-start; /* Align items to the start */
+    margin-left: 15.5%;
+    width: 75%;
+}
+
+/* Welcome Text Styles */
+.welcome-text {
+    flex: 1; /* Takes the remaining space */
+    margin-right: 30px; /* Space between text and card */
+}
+
+h2 {
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+p {
+    font-size: 20px;
+    line-height: 1.5; /* Improved readability */
+}
+
+.photo-card {
+    width: 15vw; /* Adjust this value as needed */
+    height: auto; /* This allows the height to adjust based on the content */
+    overflow: hidden; /* Prevents overflow of content */
+}
+
+.photo-card {
+    margin-top: 20px; /* Space between elements */
+    margin-right: 7%;
+    padding: 0; /* Ensure no padding */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centers the content */
+}
+
+.profile-photo{
+    width: 100%;
+    margin-left: 0%;
+    margin-right: 0%;
+}
+.card-content h3 {
+    margin: 10px 0; /* Adjust margin */
+    font-size: 1.5em; /* Font size for name */
+}
+
+.card-content p {
+    font-size: 0.9em; /* Font size for description */
+    margin: 0; /* Remove default margin */
+}
+
+
+.card-content {
+    padding: 15px;
+    text-align: center; /* Center-align text in the card */
+    color: light-dark(#5C4A42, #f5f5f5);
 }

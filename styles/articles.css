@@ -9,6 +9,11 @@ img {
     margin-bottom: 2%;
 }
 
+header {
+    margin-left: 12.5%;
+    width: 75%;
+}
+
 figcaption {
     display: block;
     text-align: center;
