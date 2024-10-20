@@ -81,6 +81,9 @@ a:hover {
     .responsive-sidebar {
         display: flex;
     }
+    main {
+        margin-top: 20px;
+    }
 }
 
 .responsive-sidebar {
@@ -89,6 +92,8 @@ a:hover {
     padding: 1em;
     justify-content: center;
     align-items: center; 
+    position: fixed;
+    width: 100%;
 }
 
 .responsive-title {
