@@ -36,6 +36,7 @@ a:hover {
     text-decoration: underline;
 }
 
+/* CSS DE LA NAVBAR RESPONSIVE */
 .sidebar {
     background-color: light-dark(#F5F5F5, #2c333a); /* Updated sidebar to a lighter shade of beige */
     width: 250px;
@@ -66,6 +67,39 @@ a:hover {
     color: light-dark(#D4A373, #6badce);
 }
 
+@media screen and (min-width: 600px) {
+    .mobile-screen {
+        display: none;
+    }
+}
+
+/* Partie pour les petits écrans */
+@media screen and (max-width: 600px) {
+    .sidebar {
+        display: none;
+    }
+    .responsive-sidebar {
+        display: flex;
+    }
+}
+
+.responsive-sidebar {
+    background-color: light-dark(#F5F5F5, #2c333a);
+    overflow: hidden;
+    padding: 1em;
+    justify-content: center;
+    align-items: center; 
+}
+
+.responsive-title {
+        flex-grow: 1;
+        text-align: center; 
+        font-size: 20px;
+        font-weight: bold;
+        text-decoration: none;
+}
+
+/* ********************************$ */
 .social-icons {
     margin-top: 30px;
     display: flex;
@@ -99,6 +133,12 @@ main {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+}
+
+@media screen and (max-width: 600px) {
+    main {
+        margin-left: 20px;
+    }
 }
 
 header {
@@ -147,3 +187,5 @@ footer {
     justify-content: center;
     padding: 0;
 }
+
+
