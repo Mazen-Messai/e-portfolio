@@ -1,6 +1,6 @@
 img {
-    border-radius: 20px;
-    width: 40%;
+    border-radius: 5%;
+    width: 55vw;
     object-fit: cover;
     display: block;
     margin-left: auto;
@@ -17,16 +17,4 @@ figcaption {
 
 h2 {
     font-size: 30px;
-}
-
-p {
-    text-align: justify;
-    font-size: 20px;
-}
-
-@media screen and (min-width: 600px) {
-    .study-content {
-        margin-left: 12.5%;
-        width: 75%;
-    }
 }
