@@ -168,7 +168,7 @@
                 First, the algorithm begins with selection. Based on the current state of the game, it traverses the existing decision tree, choosing the nodes (or moves) that seem most promising. This phase is guided by the Upper Confidence Bound (UCB) formula, which manages the dilemma between exploiting moves already explored or exploring new ones. The UCB formula is given by :
             </p>
             \[
-            \large a^* = \arg \max_{a \in A(s)} \left[ Q(s, a) + C \sqrt{\frac{\ln N(s)}{N(s, a)}} \right]
+            \normalsize a^* = \arg \max_{a \in A(s)} \left[ Q(s, a) + C \sqrt{\frac{\ln N(s)}{N(s, a)}} \right]
             \]
             <p>
                 where A(s) represents the possible actions in the state, Q(s, a) is the average score obtained by playing a, N(s) is the number of times the state has been visited, \( N(s, a) \) the number of times the action \( a \) has been chosen, and \( C \) is a constant that regulates the balance between exploration and exploitation.

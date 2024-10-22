@@ -171,8 +171,8 @@ main {
 
 @media screen and (min-width: 600px) {
     .study-content {
-        margin-left: 4%;
-        width: 90%;
+        margin-left: 5%;
+        margin-right: 5%;
     }
 
 }
