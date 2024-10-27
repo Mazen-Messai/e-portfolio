@@ -225,3 +225,26 @@ footer {
 }
 
 
+.button-container {
+    margin-top: 20px;
+    display: flex;
+    gap: 15px;
+}
+
+.btn {
+    padding: 10px 20px;
+    font-size: 1em;
+    font-weight: bold;
+    color: #fff;
+    background-color: light-dark(#D4A373, #6badce);
+    border: none;
+    border-radius: 5px;
+    text-align: center;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn:hover {
+    background-color: light-dark(#b68250, #5c9bb1); /* Darken color on hover */
+    transform: translateY(-3px); /* Lift button on hover */
+}
