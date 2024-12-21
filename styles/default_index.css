@@ -19,13 +19,23 @@ h1, h2, h3 {
 }
 
 h3 {
-    font-size: 25px;
+    font-size: 22px;
+}
+
+.poppins-regular {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
 }
 
 p {
     text-align: justify;
-    font-size: 20px;
+    font-size: 16px;
+    font-family : "Poppins";
 }
+
+
+
 
 a {
     color: light-dark(#D4A373, #6badce);
@@ -33,7 +43,7 @@ a {
 }
 
 a:hover {
-    text-decoration: underline;
+    text-decoration: none;
 }
 
 /* CSS DE LA NAVBAR RESPONSIVE */
@@ -47,6 +57,8 @@ a:hover {
     left: 0;
     box-shadow: 3px 0 5px rgba(0, 0, 0, 0.1);
     z-index: 2;
+    font-size: 18px;
+    font-family : "Poppins";
 }
 
 .sidebar nav ul {
@@ -217,8 +229,8 @@ footer {
     position: relative;
     width: 100%;
     border-top: 1px solid light-dark(#D4A373, #6badce);
-    height: 100px;
-    display: flex;
+    height: 60px;
+    display: grid;
     align-items: center;
     justify-content: center;
     padding: 0;
@@ -229,6 +241,8 @@ footer {
     margin-top: 20px;
     display: flex;
     gap: 15px;
+    font-size: 14px;
+    font-family : "Poppins";
 }
 
 .btn {
@@ -247,4 +261,5 @@ footer {
 .btn:hover {
     background-color: light-dark(#b68250, #5c9bb1); /* Darken color on hover */
     transform: translateY(-3px); /* Lift button on hover */
+    text-decoration : none;
 }
