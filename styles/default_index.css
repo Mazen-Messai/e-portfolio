@@ -1,64 +1,17 @@
-/* Corps de la page : Flexbox pour gérer le footer */
-body {
+/* HTML et body */
+html, body {
+    overflow: auto;
+    height: 100%;
     margin: 0;
+}
+
+body {
     font-family: 'Poppins', sans-serif;
-    background-color: #10151A; /* Bleu presque noir */
-    color: #F1F5F8; /* Blanc cassé */
+    background-color: #10151A;
+    color: #F1F5F8;
     display: flex;
     flex-direction: column;
-    min-height: 100vh; /* Hauteur minimale = taille de l'écran */
-    overflow: hidden; /* Empêche les éléments de déborder */
-}
-
-/* Section principale */
-main {
-    flex: 1; /* Étend la section principale */
-    display: flex;
-    flex-direction: column; /* Empile les sections verticalement */
-    align-items: flex-start; /* Aligne le contenu à gauche */
-    margin: 0 auto; /* Centre horizontalement le conteneur principal */
-    padding: 50px 10%; /* Espacement autour du contenu */
-    gap: 40px; /* Espacement entre les sections */
-    max-width: 60%; /* Limite la largeur globale */
-}
-
-/* Style des sections */
-main section {
-    width: 100%; /* Occupe toute la largeur de la zone définie */
-    text-align: left; /* Aligne tout le texte à gauche */
-}
-
-main h1 {
-    font-size: 2.5rem;
-    font-weight: 600;
-    color: #F1F5F8; /* Couleur du "Hi, I am" */
-    margin: 1px;
-}
-
-
-main h1, main p {
-    z-index: 15; /* Ajout d'un z-index élevé pour le texte */
-    position: relative; /* Nécessaire pour appliquer z-index */
-    background-color: rgba(16, 22, 26, 0); /* Fond semi-transparent */
-}
-
-/* Application du dégradé uniquement sur "Mazen Messai" */
-.highlight-name {
-    font-size: 3rem; /* Taille plus grande pour le nom */
-    font-weight: 600;
-    color: transparent; /* Le texte devient transparent pour permettre l'effet de dégradé */
-    background: linear-gradient(to right, #4FC3F7, #81D4FA, #80DEEA, #B3E5FC); /* Dégradé bleu clair */
-    -webkit-background-clip: text; /* Applique le dégradé au texte */
-    background-clip: text; /* Applique le dégradé au texte */
-}
-
-/* Footer fixé en bas */
-footer {
-    text-align: center;
-    padding: 10px 0;
-    font-size: 0.9rem;
-    font-weight: 600;
-    color: #AAB2BD; /* Gris clair */
+    min-height: 100vh;
 }
 
 /* Topbar avec effet glassmorphism */
@@ -67,77 +20,160 @@ topbar {
     justify-content: space-between;
     align-items: center;
     padding: 15px 30px;
-    background-color: rgba(255, 255, 255, 0.01);  /* Fond légèrement transparent */
-    backdrop-filter: blur(200); /* Flou du fond pour l'effet frosted glass */
-    box-shadow: 0 6px 30px rgba(0, 0, 0, 0.15); /* Légère ombre autour pour la profondeur */
+    background-color: rgba(255, 255, 255, 0.01);
+    backdrop-filter: blur(200);
+    box-shadow: 0 6px 30px rgba(0, 0, 0, 0.15);
     position: relative;
-    z-index: 20; /* S'assurer que la topbar est au-dessus des blobs */
+    z-index: 20;
 }
 
-/* Style des boutons de la topbar */
 .topbar-buttons {
     display: flex;
-    gap: 15px;
+    gap: 25px;
 }
 
-.topbar-btn {
-    position: relative; /* Nécessaire pour le pseudo-élément */
+.topbar-buttons a {
     font-size: 0.9rem;
     font-weight: 500;
-    color: #F1F5F8; /* Blanc cassé */
-    background: none;
-    border: none;
-    cursor: pointer;
+    color: #F1F5F8;
+    text-decoration: none;
     padding: 10px 0;
+    position: relative;
     transition: color 0.3s ease;
-    text-transform: none; /* Supprime les majuscules */
+    text-transform: none;
 }
 
-/* Animation des boutons au survol */
-.topbar-btn::after {
+/* Animation des liens au survol */
+.topbar-buttons a::after {
     content: "";
     position: absolute;
     left: 0;
     bottom: 0;
     width: 0;
     height: 2px;
-    background-color: #3C91E6; /* Bleu clair */
+    background-color: #3C91E6;
     transition: width 0.3s ease;
 }
 
-.topbar-btn:hover::after {
-    width: 100%; /* Ligne pleine au survol */
+.topbar-buttons a:hover::after {
+    width: 100%;
 }
 
-.topbar-btn:hover {
-    color: #3C91E6; /* Texte bleu clair */
+.topbar-buttons a:hover {
+    color: #3C91E6;
 }
 
-/* Icônes sociales */
 .social-icons a {
     margin-left: 10px;
-    color: #F1F5F8; /* Couleur par défaut */
+    color: #F1F5F8;
     transition: color 0.3s ease;
-    display: inline-flex; /* Corrige les dépassements */
-    align-items: center; /* Centre les icônes verticalement */
-    text-decoration: none; /* Supprime tout soulignement */
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
 }
 
 .social-icons a:hover {
-    color: #3C91E6; /* Change la couleur au survol */
+    color: #3C91E6;
 }
 
-/* CERCLES FLUOUS EN FOND */
+
+/* Main Section */
+main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 0 auto;
+    padding: 50px 10%;
+    gap: 40px;
+    max-width: 60%;
+}
+
+main section {
+    width: 100%;
+    text-align: left;
+    margin-top: 15vh;
+    margin-bottom: 22vh;
+}
+
+main h1 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: #F1F5F8;
+    margin: -10px 0;
+    position: relative;
+    z-index: 15;
+}
+
+main h1, main p {
+    z-index: 15;
+    position: relative;
+    background-color: rgba(16, 22, 26, 0);
+}
+
+.header-inline {
+    display: flex;
+    align-items: baseline; /* Aligne les textes à la même ligne de base */
+    gap: 20px; /* Espace entre les deux éléments */
+}
+
+.header-inline h1 {
+    margin: 0; /* Supprime les marges par défaut */
+}
+
+
+.highlight-name {
+    font-size: 3rem;
+    font-weight: 600;
+    color: transparent;
+    background: linear-gradient(to right, #4FC3F7, #81D4FA, #56c1f3, #13aef6);
+    -webkit-background-clip: text;
+    background-clip: text;
+}
+
+/* Learn More Button */
+.learn-more-btn {
+    z-index: 100;
+    position: relative;
+    display: inline-block;
+    margin-top: 40px;
+    padding: 15px 20px;
+    font-size: 1rem;
+    font-weight: 600;
+    text-align: center;
+    text-decoration: none;
+    color: #F1F5F8;
+    background: linear-gradient(to right, #3C91E6, #00B0FF);
+    border: none;
+    border-radius: 50px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.learn-more-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 10px 0;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #AAB2BD;
+}
+
+/* Blob Background */
 .blob-outer-container {
     z-index: -2;
     position: fixed;
     height: 100%;
     width: 100%;
-    z-index: 0; /* C'est derrière la topbar */
     inset: 0;
     margin: auto;
-    filter: blur(150px); /* Flou important */
-    opacity: 0.6; /* Opacité pour rendre l'effet plus subtil */
+    filter: blur(150px);
+    opacity: 0.6;
 }
 
 .blob-inner-container {
@@ -153,25 +189,16 @@ topbar {
     transform: scale(0.8);
 }
 
-/* Animation des cercles */
 .blob {
     position: absolute;
     width: 100vw;
     height: 100vh;
     inset: 0;
     margin: auto;
-    background: conic-gradient(from 0deg, #2D4F8F, #004F70, #1A3B60, #031C39); /* Tons de bleus */
+    background: conic-gradient(from 0deg, #2D4F8F, #004F70, #1A3B60, #031C39);
     animation: morphCircles 20s ease-in-out infinite;
 }
 
-/* Ajuster les couleurs des blobs */
-.blob {
-    background: conic-gradient(from 0deg, #2D4F8F, #004F70, #1A3B60, #031C39); /* Dégradé plus sombre */
-    animation: morphCircles 20s ease-in-out infinite;
-}
-
-
-/* Animation de morphing des cercles (déplacement + taille + mouvement aléatoire) */
 @keyframes morphCircles {
     0% {
         transform: translate(0, 0) scale(1.2);
