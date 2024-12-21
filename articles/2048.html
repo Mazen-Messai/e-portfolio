@@ -3,57 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mazen Messai - Comparative Study Between Minimax and MCTS for 2048</title>
-    <!-- Link to FontAwesome for icons -->
+    <title>Mazen Messai - Articles</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="../../styles/default_index.css">
-    <link rel="stylesheet" href="../../styles/articles.css">
-    <script src="../../scripts/main.js"></script>
-    <!-- MathJax for rendering LaTeX -->
+    <link rel="stylesheet" href="../default_index.css">
+    <link rel="stylesheet" href="articles.css">
+    <script src="../scripts/main.js"></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Sidebar -->
-    <aside class="sidebar" id="sidebar">
-        <nav>
-            <!-- Pour fermer la navbar responsive -->
-            <a href="javascript:void(0);" class="icon mobile-screen" onclick="toggleSideBar()">
-                <i class="fa fa-close"></i>
+
+    <topbar>
+        <div class="topbar-buttons">
+            <a href="../default_index.html" class="topbar-btn">Home</a>
+            <a href="../articles.html" class="topbar-btn">Articles</a>
+            <a href="../contact.html" class="topbar-btn">Contact Me</a>
+        </div>
+
+        <div class="social-icons">
+             
+                <i class="fab fa-linkedin fa-2x"></i>
             </a>
-            <!-- Liens de la NavBar -->
-            <ul>
-                <li><a href="../default_index.html">Welcome</a></li>
-                <li><a href="blog.html">Engineering Course & Articles</a></li>
-                <li><a href="international_mobility.html">International mobility</a></li>
-                <li><a href="civic_engagement.html">Civic Engagment</a></li>
-                <li><a href="career.html">Career Developpement</a></li>
-                <li><a href="sports_and_activities.html">Sport & Other activities</a></li>
-            </ul>
-            <!-- Icons socials -->
-            <div class="social-icons">
-                <!-- LinkedIn and GitHub icons -->
-                <a href="https://www.linkedin.com/in/mazen-messai-4587a41bb/" target="_blank">
-                    <i class="fab fa-linkedin fa-2x"></i>
-                </a>
-                <a href="https://github.com/Mazen-Messai" target= "_blank">
-                    <i class="fab fa-github fa-2x"></i>
-                </a>
-            </div>
-        </nav>
-    </aside>
-    
-    <div class="mobile-screen responsive-sidebar">
-        <a href="javascript:void(0);" class="icon" onclick="toggleSideBar()">
-            <i class="fa fa-bars"></i>
-          </a>
-        <a href="../../default_index.html" class="responsive-title">Mazen Messai</a>
-    </div>
-    <!-- Main Content -->
+            <a href="https://github.com/Mazen-Messai" target="_blank">
+                <i class="fab fa-github fa-2x"></i>
+            </a>
+        </div>
+    </topbar>
+
     <main>
-        <header class="study-content">
-            <h1>Comparative Study Between Minimax Algorithm and MCTS for the Game 2048</h1>
-            <p>Most off us know 2048, and most of us play this game "instinctivly", but how about algorithm? My close friend <a href="https://www.linkedin.com/in/tiromar/">Omar</a> and I have explored the subjet during our second year of Classe Prépatatoire, and here is a little article explaining what we did and our results !  </p>
-        </header>
+        <div class="blob-outer-container">
+            <div class="blob-inner-container">
+                <div class="blob"></div>
+            </div>
+        </div>
+
+        <h1 style="margin: 0; color:#81D4FA;">Comparative Study Between Minimax Algorithm and MCTS for the Game 2048</h1>
+        <p style="margin-top: -25px;margin-bottom: -10px;">Most off us know 2048, and most of us play this game "instinctivly", but how about algorithm? My close friend <a class="link" href="https://www.linkedin.com/in/tiromar/">Omar</a> and I have explored the subjet during our second year of Classe Prépatatoire, and here is a little article explaining what we did and our results !</p>
 
         <section class="study-content">
             <h2>Abstract</h2>
@@ -90,12 +77,12 @@
             <p>
                 The graph below shows the distribution of scores obtained after 1000 simulated games. As can be seen, the majority of games reach scores between 500 and 1500, and very few manage to exceed the 2000-point mark. 
             </p>
-                <img src="..\..\ressources\ressources2048\score1.png">
+                <img src="..\ressources\ressources2048\score1.png">
                 <figcaption>Fig.1 - Score distribution for 1000 random games </figcaption>
             <p>
                 The following graph illustrates the distribution of tiles obtained in these simulations. It shows that the majority of games result in tiles with modest values, such as 64 or 128, and that very few games manage to generate tiles with higher values, such as 512 or 256.
             </p>
-                <img src="..\..\ressources\ressources2048\scoredonut1.png">
+                <img src="..\ressources\ressources2048\scoredonut1.png">
                 <figcaption>Fig.2 - Distribution of tiles obtained during simulations </figcaption>
             <p>
                 These simulations clearly show that strategies based solely on chance cannot reliably beat the game. Although some simple rules can slightly improve results, they are still insufficient to maximize the chances of success.  
@@ -108,9 +95,9 @@
             <p>
                 Minimax helps to explore all the options available at each move, and to choose the option that maximizes the chances of long-term success, taking into account not only the immediate move, but also its future consequences. Coupled with alpha-beta pruning, the Minimax algorithm becomes more efficient by reducing the number of branches to be explored in the decision tree.
             </p>
-                <img src="..\..\ressources\ressources2048\arbre1.png">
+                <img src="..\ressources\ressources2048\arbre1.png">
                 <figcaption>Fig.3 - Alpha-Beta tree </figcaption>
-                <img src="..\..\ressources\ressources2048\arbre2.png">
+                <img src="..\ressources\ressources2048\arbre2.png">
                 <figcaption>Fig.4 - Alpha-Beta tree </figcaption>
             <p>
                 Figure 3 shows the basic structure of a Minimax tree. Level 0 represents the player seeking to maximize his score by choosing the best possible move from the directions (left, up, down, right). Level 1 simulates the random appearance of new tiles after the player's move, representing the “minimization” of the player's gains, as these new tiles may prevent future mergers. The process alternates between these two levels until it reaches a certain depth, at which point an evaluation function determines the quality of each board state.  
@@ -135,7 +122,7 @@
                 The second key heuristic is regularity. This measures the differences in values between adjacent tiles and seeks to minimize these differences. A regular board features tiles whose values are close to each other, thus facilitating future mergers. This regularity is particularly important, as too great a gap between the values of adjacent tiles makes it more difficult to create new mergers in future moves. Regularity is calculated using the following formula :
             </p>
             \[
-            \large\text{régularité} = - \sum_{i=0}^{3} \sum_{j=0}^{3} (d_{i,j}^{V} + d_{i,j}^{H})
+            \large\text{regularity} = - \sum_{i=0}^{3} \sum_{j=0}^{3} (d_{i,j}^{V} + d_{i,j}^{H})
             \]
             <p>
                 In this formula, \(d_{i,j}^{V}\) and \(d_{i,j}^{H}\) measure the logarithmic distance between vertically and horizontally adjacent tiles. The smaller the deviation, the more regular the board is considered to be, making future mergers easier.
@@ -144,7 +131,7 @@
             <p>
                 After applying the heuristics to the Minimax algorithm, we'll discuss the results obtained for different depth configurations. The graph below (Figure 5) illustrates the results of the Minimax algorithm for three different calculation depths: 4, 5 and 6. 
             </p>
-                <img src="..\..\ressources\ressources2048\3graphiquesMinimax.png">
+                <img src="..\ressources\ressources2048\3graphiquesMinimax.png">
                 <figcaption>Fig.5 - Results of the Minimax algorithm at depths 4, 5 and 6, 100 games.</figcaption>
             <p>
                 At a depth of 6, Minimax manages to significantly increase the proportion of games reaching tile 2048, but even at this depth, the win rate doesn't exceed 50\%. This shows that even when optimizing moves and anticipating worst-case scenarios, the algorithm is still limited by the random element introduced by the appearance of new tiles after each move. What's more, the computational time cost becomes very high at this depth, making execution of the algorithm very slow, especially for long-term simulations.
@@ -181,7 +168,7 @@
             <p>
                 The MCTS algorithm proved highly effective in solving 2048 games with impressive results, even with relatively small depth due to computational time constraints. As shown in Figure 7, of the 100 simulated games, 66 reached tile 2048, and 25 even reached tile 4096. Only 8 of the games were lost, demonstrating the robustness of the algorithm in achieving optimal results.
             </p>
-                <img src="..\..\ressources\ressources2048\montecarloresultat.png">
+                <img src="..\ressources\ressources2048\montecarloresultat.png">
                 <figcaption>Fig.6 - Results of MCTS algorithm, 100 games.</figcaption>
             <p>
                 However, while these performances are promising, MCTS suffers from a time complexity that can become prohibitive with higher depth. The time complexity of MCTS is given by :
@@ -199,7 +186,7 @@
             <p>
                 Improving the performance of MCTS also involves managing its temporal complexity. One possible approach would be to start the game with a human strategy, simulating for example the first 50 moves without using MCTS, where you could still get a good position in the game without losing the game (Figure 7). This method will significantly reduce the number of unoccupied squares on the board, simplifying the problem for MCTS. 
             </p>
-                <img src="..\..\ressources\ressources2048\gamesaftermoves.png">
+                <img src="..\ressources\ressources2048\gamesaftermoves.png">
                 <figcaption>Fig.7 - Lost games by number of moves.</figcaption>
             <p>
                 The integration of methods such as Reinforcement Learning, or optimization of the early stages of the game, could further enhance the performance of this algorithm. This future research will not only help us to better understand the limits of MCTS, but also to apply it to more complex problems beyond the 2048 game.
@@ -211,26 +198,27 @@
                     T. Neller and C. Presser, 
                     <em>AI for 2048: Heuristic Search and Reinforcement Learning</em>, 
                     Gettysburg College, 2014. 
-                    <a href="http://cs.gettysburg.edu/~tneller/papers/ccsce14-2048.pdf" target="_blank">http://cs.gettysburg.edu/~tneller/papers/ccsce14-2048.pdf</a>
+                    <a class="link" href="http://cs.gettysburg.edu/~tneller/papers/ccsce14-2048.pdf" target="_blank">http://cs.gettysburg.edu/~tneller/papers/ccsce14-2048.pdf</a>
                 </li>
                 <li>
                     M. Yato and T. Seta, 
                     <em>Complexity and Completeness of Finding Another Solution and Its Application to Puzzles</em>, 
                     International Journal of Advanced Applied Mathematics and Computer Science, 2017. 
-                    <a href="https://www.ripublication.com/aama17/aamav12n1_01.pdf" target="_blank">https://www.ripublication.com/aama17/aamav12n1_01.pdf</a>
+                    <a class="link" href="https://www.ripublication.com/aama17/aamav12n1_01.pdf" target="_blank">https://www.ripublication.com/aama17/aamav12n1_01.pdf</a>
                 </li>
                 <li>
                     C. Scarvalone, 
                     <em>An Investigation of 2048 Using Reinforcement Learning</em>, 
                     University of Chicago, 2008. 
-                    <a href="https://www.math.uchicago.edu/~may/VIGRE/VIGRE2008/REUPapers/Scarvalone.pdf" target="_blank">https://www.math.uchicago.edu/~may/VIGRE/VIGRE2008/REUPapers/Scarvalone.pdf</a>
+                    <a class="link" href="https://www.math.uchicago.edu/~may/VIGRE/VIGRE2008/REUPapers/Scarvalone.pdf" target="_blank">https://www.math.uchicago.edu/~may/VIGRE/VIGRE2008/REUPapers/Scarvalone.pdf</a>
                 </li>
             </ol>
         </section>
-
-        <footer>
-            <p>&copy; 2024 Mazen Messai. All Rights Reserved.</p>
-        </footer>
     </main>
+
+    <footer>
+        <p>&copy; 2024 Mazen Messai.</p>
+    </footer>
+
 </body>
 </html>
