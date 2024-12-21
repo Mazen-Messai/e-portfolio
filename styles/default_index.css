@@ -92,8 +92,6 @@ main {
 main section {
     width: 100%;
     text-align: left;
-    margin-top: 15vh;
-    margin-bottom: 22vh;
 }
 
 main h1 {
@@ -103,6 +101,15 @@ main h1 {
     margin: -10px 0;
     position: relative;
     z-index: 15;
+}
+
+main h2 {
+    font-size: 2em;
+}
+
+main p {
+    text-align: justify;
+    font-size: 1.2em;
 }
 
 main h1, main p {
