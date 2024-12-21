@@ -35,6 +35,13 @@ main h1 {
     margin: 1px;
 }
 
+
+main h1, main p {
+    z-index: 15; /* Ajout d'un z-index élevé pour le texte */
+    position: relative; /* Nécessaire pour appliquer z-index */
+    background-color: rgba(16, 22, 26, 0); /* Fond semi-transparent */
+}
+
 /* Application du dégradé uniquement sur "Mazen Messai" */
 .highlight-name {
     font-size: 3rem; /* Taille plus grande pour le nom */
@@ -122,6 +129,7 @@ topbar {
 
 /* CERCLES FLUOUS EN FOND */
 .blob-outer-container {
+    z-index: -2;
     position: fixed;
     height: 100%;
     width: 100%;
@@ -155,6 +163,13 @@ topbar {
     background: conic-gradient(from 0deg, #2D4F8F, #004F70, #1A3B60, #031C39); /* Tons de bleus */
     animation: morphCircles 20s ease-in-out infinite;
 }
+
+/* Ajuster les couleurs des blobs */
+.blob {
+    background: conic-gradient(from 0deg, #2D4F8F, #004F70, #1A3B60, #031C39); /* Dégradé plus sombre */
+    animation: morphCircles 20s ease-in-out infinite;
+}
+
 
 /* Animation de morphing des cercles (déplacement + taille + mouvement aléatoire) */
 @keyframes morphCircles {
