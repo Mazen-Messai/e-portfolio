@@ -161,7 +161,7 @@
             \normalsize a^* = \arg \max_{a \in A(s)} \left[ Q(s, a) + C \sqrt{\frac{\ln N(s)}{N(s, a)}} \right]
             \]
             <p>
-                where A(s) represents the possible actions in the state, Q(s, a) is the average score obtained by playing a, N(s) is the number of times the state has been visited, \( N(s, a) \) the number of times the action \( a \) has been chosen, and \( C \) is a constant that regulates the balance between exploration and exploitation.
+                where A(s) represents the possible actions in the state, \(Q(s, a)\) is the average score obtained by playing \(a\), N(s) is the number of times the state has been visited, \( N(s, a) \) the number of times the action \( a \) has been chosen, and \( C \) is a constant that regulates the balance between exploration and exploitation.
             </p>
             <p>
                 Once a move has been selected, the algorithm simulates a game from that move, playing a series of random moves to a hypothetical endgame. This allows the potential success of each decision to be assessed. The result of this simulation is then used to update the estimate of previous moves in the tree. At each new round, MCTS chooses the move that has achieved the best results over the simulations. This approach enables the algorithm to make optimized decisions even in the presence of uncertainty, such as the random appearance of new tiles in the 2048 game.
@@ -179,7 +179,7 @@
             \large O(n \cdot m \cdot d)
             \]
             <p>
-                where \(n\) is the number of simulations, \(m\) is the number of possible legal moves at each step, and (\d\) is the depth of the simulations. This means that as the depth and number of simulations increase, so does the computation time. In the conclusion, we'll look at different performance optimization methods.
+                where \(n\) is the number of simulations, \(m\) is the number of possible legal moves at each step, and \(d\) is the depth of the simulations. This means that as the depth and number of simulations increase, so does the computation time. In the conclusion, we'll look at different performance optimization methods.
             </p>
             <h2>Conclusion and possible improvements</h2>
             <p>

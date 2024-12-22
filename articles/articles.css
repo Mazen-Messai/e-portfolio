@@ -1,5 +1,5 @@
 img {
-    border-radius: 2vw;
+    border-radius: 1vw;
     height: 18vw;
     object-fit: cover;
     display: block;
@@ -16,8 +16,12 @@ figcaption {
 }
 
 
-h2, h1 {
+h2, h1, h3 {
     color: #81D4FA;
+}
+
+h3 {
+    font-size: 1.2em;
 }
 
 .link {
