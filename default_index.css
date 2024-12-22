@@ -107,7 +107,7 @@ topbar {
     text-decoration: none;
 }
 
-.social-icons a:hover {
+.social-icons i:hover {
     color: #3C91E6;
 }
 
