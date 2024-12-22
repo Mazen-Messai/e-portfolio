@@ -27,16 +27,8 @@
     color: #3C91E6;
 }
 
-
 main {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    margin: 0 auto;
-    padding: 30px 10%;
-    gap: 30px;
-    max-width: 50%;
+    margin-left: 10%;
 }
 
 main h1 {
