@@ -45,14 +45,14 @@
             <h1 style="margin-top:40px; color:#81D4FA;">Comparative Study Between Minimax Algorithm and MCTS for the Game 2048</h1>
             <p style="margin-top: 10px;margin-bottom: -10px;">Most off us know 2048, and most of us play this game "instinctivly", but how about algorithm? My close friend <a class="link" href="https://www.linkedin.com/in/tiromar/">Omar</a> and I have explored the subjet during our second year of Classe Prépatatoire, and here is a little article explaining what we did and our results !</p>
 
-            <h2>Abstract</h2>
+            <h2 class="title">Abstract</h2>
             <p>
                 The 2048 game, a widely recognized digital puzzle, presents a unique blend of chance and strategy, making it an ideal candidate for artificial intelligence (AI) analysis. This study investigates the performance of two prominent AI algorithms—Minimax and Monte Carlo Tree Search (MCTS)—in the context of the 2048 game. The Minimax algorithm employs a comprehensive approach by exploring all possible moves while anticipating the worst-case scenarios, whereas MCTS utilizes random simulations to navigate the decision tree, offering a flexible strategy. 
             </p>
             <p>    
                 Through simulations of 1000 games, the impact of randomness on game outcomes was assessed, revealing that purely random strategies often result in low scores. Subsequently, Minimax demonstrated significant potential in achieving the game's objective, yet its high computational costs limited its efficiency. In contrast, MCTS outperformed Minimax by achieving a higher success rate and requiring less computational time. The study concludes with potential enhancements for MCTS, including the integration of reinforcement learning and strategic human input in the early stages of the game, paving the way for future research and optimization in AI applications for more complex problems.
             </p>
-            <h2>1. Introduction</h2>
+            <h2 class="title">1. Introduction</h2>
             <p>
                 The 2048 game is a digital puzzle game that became extremely popular shortly after its launch in 2014. The game is played on a 4x4 grid where tiles with equal values combine to form a tile with a higher value. The aim is to merge the tiles until you have a tile with the value 2048. Although the rules of the game are simple, the number of possible movement options and the random introduction of new tiles each turn give the game a considerable strategic depth.
             </p>
@@ -63,7 +63,7 @@
                 Two algorithms, Minimax and Monte Carlo Tree Search (MCTS), are often used to analyze and determine the best moves in strategic games. Minimax explores all game possibilities, anticipating the worst case to choose the best move, while MCTS uses random simulations to explore the decision tree more flexibly. In this study, I dealt with the MCTS part, while Mazen Messai took care of the Minimax part. The aim of this work is to compare the performance of these two algorithms and evaluate their respective strengths and weaknesses in the context of the 2048 game.
             </p>
 
-            <h2>2. The role of chance in the 2048 game</h2>
+            <h2 class="title">2. The role of chance in the 2048 game</h2>
             <p>
                 The 2048 game involves a high degree of randomness, since after each move, a new tile (worth 2 or 4) appears randomly on the grid. To assess the impact of this random aspect, we ran a simulation of 1000 games, using different approaches based on random moves or simple rules.
             </p>
@@ -90,7 +90,7 @@
                 These simulations clearly show that strategies based solely on chance cannot reliably beat the game. Although some simple rules can slightly improve results, they are still insufficient to maximize the chances of success.  
             </p>
 
-            <h2>3. Minimax algorithm</h2>
+            <h2 class="title">3. Minimax algorithm</h2>
             <p>
                 The Minimax algorithm is one of the most commonly used methods for solving two-player game problems, simulating “maximization” and “minimization” scenarios in order to choose the optimal actions. Here, in order to get rid of the randomness, we will considerate the game as an opponent, who will place the next tiles in the scenario that will minimize our score.
             </p>
@@ -142,7 +142,7 @@
                 The cost in computing time becomes very high at this depth. For example, at a depth of 5, each part takes an average of 20 minutes to run. Consequently, to complete the 100 simulations required for the analysis, it took almost 30 hours to run. At a depth of 6, this time becomes even more prohibitive, making it difficult to run the algorithm.
             </p>
 
-            <h2>4. Monte Carlo Tree Search Algorithm</h2>
+            <h2 class="title">4. Monte Carlo Tree Search Algorithm</h2>
             <h3>4.1. How MCTS works</h3>
             <p>
                 Monte Carlo Tree Search (MCTS) is a method used to make decisions in games where the next possible states are not known precisely, as in the game 2048. Unlike other algorithms such as Minimax, MCTS is particularly useful when faced with uncertainty about the evolution of the game.
@@ -181,7 +181,7 @@
             <p>
                 where \(n\) is the number of simulations, \(m\) is the number of possible legal moves at each step, and \(d\) is the depth of the simulations. This means that as the depth and number of simulations increase, so does the computation time. In the conclusion, we'll look at different performance optimization methods.
             </p>
-            <h2>Conclusion and possible improvements</h2>
+            <h2 class="title">Conclusion and possible improvements</h2>
             <p>
                 In this study, we explored the performance of two algorithms for solving the 2048 game: Minimax and Monte Carlo Tree Search. Although Minimax performs well in certain contexts, it has shown significant limitations in terms of time complexity and ability to achieve consistent results. Conversely, the MCTS algorithm proved to be more effective in solving the game.
             </p>
@@ -194,7 +194,7 @@
                 The integration of methods such as Reinforcement Learning, or optimization of the early stages of the game, could further enhance the performance of this algorithm. This future research will not only help us to better understand the limits of MCTS, but also to apply it to more complex problems beyond the 2048 game.
             </p>
 
-            <h2>Bibliography</h2>
+            <h2 class="title">Bibliography</h2>
             <ol>
                 <li>
                     T. Neller and C. Presser, 
