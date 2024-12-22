@@ -6,7 +6,7 @@
     <title>Mazen Messai - Welcome</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="default_index.css">
-    <script src="../scripts/main.js"></script>
+    <script src="script/main.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
@@ -37,7 +37,7 @@
             </div>
         </div>
         
-        <section style="margin-top: 20vh; margin-bottom: 35vh;">
+        <section style="margin-top: 20vh; margin-bottom: 37vh;">
             <div class="header-inline">
                 <h1 style="color:#F1F5F8;font-size: 4rem;">Hi, I am  </h1>
                 <h1 class="highlight-name" style="font-size: 4rem;">Mazen Messai</h1>
@@ -74,29 +74,52 @@
         <section id="projects">
             <h2>My Projects</h2>
             <div class="project-item">
-                <div class="project-background" style="--project-image: url('ressources/mandelbrot.png');"></div>
-                <div class="project-content">
-                    <h3>Plotting Mandelbrot sets</h3>
-                    <p class="project-date">21/12/2024</p>
-                    <p class="project-description">Fractals can be so fascinating, beyond the mathematical aspect, plotting them (fastly) can be quiet a challenge, come discover how I did it with me !</p>
-                </div>
-            </div>
-
-            <div class="project-item">
                 <div class="project-background" style="--project-image: url('ressources/huffman.png');"></div>
                 <div class="project-content">
                     <h3>Huffman Compression in Ada</h3>
                     <p class="project-date">21/12/2024</p>
-                    <p class="project-description">We've all struggled with storage, but thankfully compression algorithm exists ! So let's code one, and in Ada !</p>
+                    <p class="project-description">
+                        We've all faced storage issues, but thankfully compression algorithms exist! <br>
+                        During my first year at ENSEEIHT, I wrote a program that compresses files using the Huffman algorithm. Through this project, I became more familiar with concepts such as genericity and package writing.
+                    </p>
                 </div>
             </div>
+            
+            <div class="project-item">
+                <div class="project-background" style="--project-image: url('ressources/mandelbrot.png');"></div>
+                <div class="project-content">
+                    <h3>Plotting Mandelbrot Sets</h3>
+                    <p class="project-date">15/07/2024</p>
+                    <p class="project-description">
+                        Fractals can be so fascinating! Beyond the mathematical aspect, plotting them efficiently can be quite a challenge. <br>
+                        For this project, I used C and the Raylib library. The next step is to use OpenGL to improve performance.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="project-item">
+                <div class="project-background" style="--project-image: url('ressources/ressources2048/jeu1.png');"></div>
+                <div class="project-content">
+                    <h3>2048 AI</h3>
+                    <p class="project-date">from 09/01/2023 to 05/01/2024</p>
+                    <p class="project-description">
+                        During my time in <em>Classe Préparatoire</em>, I wanted to dive deeper into game theory. <br>
+                        That's why I decided to study the 2048 game with a friend. Together, we developed several AIs and compared their performance. The objective was to build a solid methodology for creating AIs in games.
+                        We obtained some fascinating results and quickly realized that choosing an algorithm requires considering several factors, such as the role of randomness in the game, the influence of mathematical patterns, and more. <br>
+                        You can find an article about it on this website!
+                    </p>
+                </div>
+            </div>
+            
+
+
         </section>
         
         </section>        
     </main>
         
     <footer>
-        <p>&copy; 2024 Mazen Messai.</p>
+        <p>&copy; 2024 Mazen Messai. <i class="fa-solid fa-scale-balanced"></i> MIT License</p>
     </footer>
 
 </body>
