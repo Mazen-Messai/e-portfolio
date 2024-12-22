@@ -1,20 +1,8 @@
-/* HTML et body */
 html, body {
     overflow: auto;
     height: 100%;
     margin: 0;
     scroll-behavior: smooth;
-}
-
-main {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    margin: 0 auto;
-    padding: calc(50px + 15px) 10%; /* Ajout de padding pour compenser la top bar */
-    gap: 40px;
-    max-width: 60%;
 }
 
 
@@ -27,19 +15,34 @@ body {
     min-height: 100vh;
 }
 
-/* Topbar avec effet glassmorphism */
+main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 0 auto;
+    padding: calc(50px + 15px) 10%;
+    gap: 40px;
+    max-width: 60%;
+}
+
+#about-me {
+    scroll-margin-top: 80px;
+}
+
 topbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 15px 30px;
+    width: 100%;
+    overflow: visible;
     background-color: rgba(255, 255, 255, 0.01);
     backdrop-filter: blur(200px);
     box-shadow: 0 6px 30px rgba(0, 0, 0, 0.15);
-    position: fixed; /* Changement ici */
-    top: 0; /* Fixé en haut */
-    left: 0; /* Aligné à gauche */
-    width: 100%; /* Prend toute la largeur */
+    position: fixed;
+    top: 0;
+    left: 0;
     z-index: 20;
 }
 
@@ -59,7 +62,6 @@ topbar {
     text-transform: none;
 }
 
-/* Animation des liens au survol */
 .topbar-buttons a::after {
     content: "";
     position: absolute;
@@ -79,8 +81,21 @@ topbar {
     color: #3C91E6;
 }
 
+.social-icons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    flex-wrap: nowrap;
+    max-width: 100%;
+    overflow: visible;
+    padding-right: 20px;
+}
+
 .social-icons a {
-    margin-left: 10px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-right: 30px;
+    margin-left: -20px;
     color: #F1F5F8;
     transition: color 0.3s ease;
     display: inline-flex;
@@ -92,8 +107,6 @@ topbar {
     color: #3C91E6;
 }
 
-
-/* Main Section */
 main {
     flex: 1;
     display: flex;
@@ -136,12 +149,12 @@ main h1, main p {
 
 .header-inline {
     display: flex;
-    align-items: baseline; /* Aligne les textes à la même ligne de base */
-    gap: 20px; /* Espace entre les deux éléments */
+    align-items: baseline; 
+    gap: 20px;
 }
 
 .header-inline h1 {
-    margin: 0; /* Supprime les marges par défaut */
+    margin: 0;
 }
 
 
@@ -154,7 +167,6 @@ main h1, main p {
     background-clip: text;
 }
 
-/* Learn More Button */
 .learn-more-btn {
     z-index: 100;
     position: relative;
@@ -185,7 +197,7 @@ main h1, main p {
 }
 
 .project-content {
-    position: relative; /* Pour s'assurer que le texte reste au-dessus */
+    position: relative;
     z-index: 2;
 }
 
@@ -242,7 +254,6 @@ main h1, main p {
     text-transform: none;
 }
 
-/* Animation des liens au survol */
 .project-content a::after {
     content: "";
     position: absolute;
@@ -262,11 +273,6 @@ main h1, main p {
     color: #3C91E6;
 }
 
-.study-content{
-    margin-top: 50px;
-}
-
-/* Footer */
 footer {
     text-align: center;
     padding: 10px 0;
@@ -275,7 +281,6 @@ footer {
     color: #AAB2BD;
 }
 
-/* Blob Background */
 .blob-outer-container {
     z-index: -2;
     position: fixed;
