@@ -45,7 +45,6 @@ topbar {
     left: 0;
     z-index: 20;
 }
-
 .topbar-buttons {
     display: flex;
     gap: 25px;
@@ -84,11 +83,16 @@ topbar {
 .social-icons {
     display: flex;
     justify-content: flex-end;
+    align-items: center;
     gap: 10px;
     flex-wrap: nowrap;
-    max-width: 100%;
-    overflow: visible;
-    padding-right: 20px;
+    padding: 0 20px;
+}
+
+.social-icons i {
+    margin: 0;
+    color: #F1F5F8;
+    transition: color 0.3s ease;
 }
 
 .social-icons a {
