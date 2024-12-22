@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="../default_index.css">
     <link rel="stylesheet" href="articles.css">
-    <script src="../scripts/main.js"></script>
+    <script src="articles.js"></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -39,12 +39,12 @@
             </div>
         </div>
 
-
+        <div class="table-of-contents" id="toc"></div>
 
         <section class="study-content">
             <h1 style="margin-top:40px; color:#81D4FA;">How do Neural Network works?</h1>
             <p style="margin-top: 10px;margin-bottom: -10px;">Let's discover how  we can mimic the human brain, thanks to computers and linear algebra !</p>
-            <h2 class="title">1. Introduction</h2>
+            <h2 class="title" id>1. Introduction</h2>
             <p>
                 I’m sure that anyone reading this article has at least a rough idea of what neural networks are, so we’ll skip the historical details and focus on the essentials. 
                 The goal here is to give you a clear and practical understanding of how neural networks work.
@@ -53,11 +53,11 @@
             </p>
 
             <h2 class="title">2. What is a neural network</h2>
-            <h3>2.1. A formal definition</h3>
+            <h3>2.1. Some definitions</h3>
 
             <blockquote class="citation">
                 <br>
-                An ANN consists of connected units or nodes called artificial neurons, which loosely model the neurons in the brain. Artificial neuron models that mimic biological neurons more 
+                An ANN [Artificial Neural Network] consists of connected units or nodes called artificial neurons, which loosely model the neurons in the brain. Artificial neuron models that mimic biological neurons more 
                 closely have also been recently investigated and shown to significantly improve performance. These are connected by edges, which model the synapses in the brain. 
                 Each artificial neuron receives signals from connected neurons, then processes them and sends a signal to other connected neurons. The "signal" is a real number, 
                 and the output of each neuron is computed by some non-linear function of the sum of its inputs, called the activation function. The strength of the 
