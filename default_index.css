@@ -228,12 +228,18 @@ main h1, main p {
     border-radius: 12px;
     margin-bottom: 30px;
     padding: 20px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.5s ease-in-out, box-shadow 9.5s ease-in-out, background-color 0.5s ease-in-out;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
     display: flex;
     flex-direction: column;
     gap: 20px;
     overflow: hidden;
+}
+
+.project-item:hover {
+    transform: scale(1.05);  /* Augmente la taille de 5% */
+    box-shadow: 0 6px 30px rgba(0, 0, 0, 0.3); /* Ajoute un effet de shadow plus intense */
+    background-color: rgba(0, 0, 0, 0.3);   
 }
 
 .project-background {
@@ -242,7 +248,7 @@ main h1, main p {
     right: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(to left, rgba(16, 22, 26, 0.5) 0%, rgba(16, 22, 26, 1) 80%),  var(--project-image);
+    background: linear-gradient(to left, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 1) 80%),  var(--project-image);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
