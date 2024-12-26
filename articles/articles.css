@@ -1,8 +1,8 @@
 .table-of-contents {
     position: fixed;
-    left: 50px; 
+    left: 2vw; 
     top: 100px; 
-    width: 250px; 
+    width: 14vw; 
     padding: 20px;
     background-color: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(10px);
