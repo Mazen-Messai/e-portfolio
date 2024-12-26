@@ -23,3 +23,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
     tocContainer.appendChild(tocList);  // Ajouter la liste complète au conteneur du sommaire
 });
+
+MathJax.Hub.Config({
+    CommonHTML: {
+      scale: 1
+    }
+  });

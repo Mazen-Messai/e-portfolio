@@ -158,3 +158,43 @@ h3 {
     margin-top: 10px;
 }
 
+@media (max-width: 768px) {
+    .study-content h1 {
+        font-size: 1.5em;
+    }
+
+    .table-of-contents {
+        display: none;
+    }
+
+    .study-content h2 {
+        font-size: 1.2em;
+    }
+
+    .study-content h3 {
+        font-size: 1.1em;
+    }
+
+    .study-content p {
+        font-size: 1em;
+    }
+    
+    .MJX-TEX { 
+        font-size:0.8em; 
+    }
+    
+    img {
+        border-radius: 2vw;
+        height: auto;
+        width: 100%;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 4%;
+        margin-bottom: 2%;
+    }
+
+    figcaption {
+        font-size: 0.8em;
+    }
+}

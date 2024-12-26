@@ -159,6 +159,10 @@ main h1, main p {
     display: none ;
 }
 
+.medium-title {
+    display: none;
+}
+
 .header-inline {
     display: flex;
     align-items: baseline; 
@@ -335,6 +339,7 @@ footer {
     margin: auto;
     background: conic-gradient(from 0deg, #2D4F8F, #004F70, #1A3B60, #031C39);
     animation: morphCircles 10s ease-in-out infinite;
+    will-change: transform, opacity;
 }
 
 @keyframes morphCircles {
@@ -356,12 +361,17 @@ footer {
 }
 
 
-@media (max-width: 768px) {
-
-    main h1, h2, h3 {
-        font-size: 1.2em;
+@media (max-width : 1200px) {
+    .medium-title {
+        display: block;
     }
 
+    .header-inline {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
     main p {
         font-size: 1em;
     }
@@ -372,10 +382,12 @@ footer {
         flex-direction: column;
         align-items: flex-start;
         margin: 0 auto;
-        padding: 0 0;
-        gap: 0;
+        padding: 10px 5%;
+        gap: 20px;
         max-width: 70%;
     }
+
+    .medium-title {display: none;}
 
     .phone-title {
         display: block;
@@ -393,9 +405,12 @@ footer {
         margin-top: -40vh;
     }
 
-    img {
-        width: 95%;
-        height: auto;
-        margin: 0 auto;
+    .project-item h3 {
+       font-size : 1.2em;
+    }
+
+    .project-content .project-description {
+        font-size: 0.8em;
+        line-height: 1.5;
     }
 }
